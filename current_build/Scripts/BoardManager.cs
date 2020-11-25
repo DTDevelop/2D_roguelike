@@ -13,7 +13,7 @@ using Random = UnityEngine.Random;
 public class BoardManager : MonoBehaviour
 {
     // declare serializable public class, Count
-    [Serialiable]
+    [Serializable]
     public class Count
     {
         public int minimum;
@@ -86,14 +86,14 @@ public class BoardManager : MonoBehaviour
         // use same loop pattern for floor & outerwall tiles
         for (int x = -1; x < columns + 1; x++)
         {
-          for (int y = -1; y < rows + 1 y++)
-          {
+            for (int y = -1; y < rows + 1; y++)
+            {
               // starting -1, to +1
               // build edge aroudn active portion of gameboard
               // using outerwall objects
 
               // choosing floor tiles at random, instantiate it
-              GameObject toInstantiate = floorTiles(Random.Range (0, floortiles.Length));
+                GameObject toInstantiate = floorTiles[Random.Range (0, floortiles.Length)];
               // declare variable of type Gameobject called toInstantiate
               // setting it to equal an index in an array called floorTiles chosen randomly
               // between 0 and the length of the given array
@@ -101,10 +101,10 @@ public class BoardManager : MonoBehaviour
 
               // checking if currently in outer wall position
               // if yes, choose outerwall tile to instantiate
-              if (x == -1 || x == columns || y == -1 || y == rows)
+                if (x == -1 || x == columns || y == -1 || y == rows)
               // checks if x is -1, or value for columns
               // checks if y is -1, or value for rows
-                toInstantiate = outerWallTiles(Random.Range (0, outerWallTiles.Length));
+                    toInstantiate = outerWallTiles[Random.Range (0, outerWallTiles.Length)];
 
               // once chosen what tile we want to instantiate, then we instantiate it
               // declare variable called instance, assign it the object we're instantiating
@@ -112,12 +112,12 @@ public class BoardManager : MonoBehaviour
               // call instantiate, pass in toInstantiate (prefab chosen)
               // located at new Vector3 based on current x,y coordinates in the loop passing 0 for z axis as we're in 2d
               // Quaternion idenity == instantiate with no rotation
-              GameObject instance = Instantiate(toInstantiate, new Vector 3 (x,y,0f), Quaternion.identity) as GameObject;
+                GameObject instance = Instantiate(toInstantiate, new Vector 3 (x,y,0f), Quaternion.identity) as GameObject;
               // casting it to a GameObject (explicit conversion)
 
               // setting parent of our new instantiated gameobject to boardholder
-              instance.transform.SetParent(boardHolder);
-          }
+                instance.transform.SetParent(boardHolder);
+            }
         }// boardsetup layouts outer wall tiles & background of floor tiles
     }
 
@@ -137,7 +137,7 @@ public class BoardManager : MonoBehaviour
     } // generates random positon from list & ensures it isn't duplicate
 
     // function that spawns tile at random position
-    void LayoutObjectAtRandom(GameObject[] tileArray int minimum, int maximum)
+    void LayoutObjectAtRandom(GameObject[] tileArray, int minimum, int maximum)
     // takes an array of GameObjects called tileArray, min int, max int
     {
         int objectCount = Random.Range (minimum, maximum +1);
