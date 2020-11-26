@@ -54,7 +54,7 @@ public class BoardManager : MonoBehaviour
     // used to kee hierarchy clean
     // due to so many gameobjects, child all to boardholder
     // able to collapse hierarchy & not fill it with gameobjects
-    private Transform boardholder;
+    private Transform boardHolder;
 
     // used to track all different possible positions on gameboard
     // whether an object has been spawned in that position or not
@@ -93,7 +93,7 @@ public class BoardManager : MonoBehaviour
               // using outerwall objects
 
               // choosing floor tiles at random, instantiate it
-                GameObject toInstantiate = floorTiles[Random.Range (0, floortiles.Length)];
+                GameObject toInstantiate = floorTiles[Random.Range (0, floorTiles.Length)];
               // declare variable of type Gameobject called toInstantiate
               // setting it to equal an index in an array called floorTiles chosen randomly
               // between 0 and the length of the given array
@@ -112,7 +112,7 @@ public class BoardManager : MonoBehaviour
               // call instantiate, pass in toInstantiate (prefab chosen)
               // located at new Vector3 based on current x,y coordinates in the loop passing 0 for z axis as we're in 2d
               // Quaternion idenity == instantiate with no rotation
-                GameObject instance = Instantiate(toInstantiate, new Vector 3 (x,y,0f), Quaternion.identity) as GameObject;
+                GameObject instance = Instantiate(toInstantiate, new Vector3 (x,y,0f), Quaternion.identity) as GameObject;
               // casting it to a GameObject (explicit conversion)
 
               // setting parent of our new instantiated gameobject to boardholder
@@ -129,7 +129,7 @@ public class BoardManager : MonoBehaviour
 
         // declare vector3 called randomposition
         // set value as - get value stored at index
-        Vector3 randomPosition = gridPositions[randomIndex]
+        Vector3 randomPosition = gridPositions[randomIndex];
         // make sure 2 objects don't spawn in same location
         // grid position used will be removed from list
         gridPositions.RemoveAt(randomIndex); //using RemoveAt command
@@ -143,14 +143,14 @@ public class BoardManager : MonoBehaviour
         int objectCount = Random.Range (minimum, maximum +1);
         // controls how many of a given object we're spawning
         // eg. num of walls in level
-        for (int 1 = 0; 1  < objectCount; i++)
+        for (int i = 0; i  < objectCount; i++)
         {
             // choose random position by calling helper function, randomPosition
             Vector3 randomPosition = RandomPosition();
             // choose random tile from array of game objects tileArray to spawn
             GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
             // instantiate tile chosen at random position
-            instantiate (tileChoice, randomPosition, Quaternion.identity);
+            Instantiate(tileChoice, randomPosition, Quaternion.identity);
         }
     }
 
@@ -160,7 +160,7 @@ public class BoardManager : MonoBehaviour
         BoardSetup();
         InitialiseList();
         LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
-        LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodcount.maxmimum);
+        LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum);
         // rather than random amonut of enemies
         // generate num of enemies based on level using Mathf.log, logarithmic difficulty progression
         // Mathf.log returns a float, we cast it as int (explicit conversion)
@@ -197,4 +197,4 @@ public class BoardManager : MonoBehaviour
 
 
 
-#
+//
