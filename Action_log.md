@@ -12,4 +12,4 @@
 
 2020-11-27 / Danny Tran  
     Write MovingObject.cs in Atom  
-    
+    Debug MovingObject.cs in Atom using Unity Console  
