@@ -10,5 +10,6 @@
     Write Loader.cs in Atom  
     Successfully start game and layout levels (LEVEL GENERATION)  
 
-2020-11-27 / Danny Tran
-    Write MovingObject.cs in Atom
+2020-11-27 / Danny Tran  
+    Write MovingObject.cs in Atom  
+    
