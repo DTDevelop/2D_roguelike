@@ -11,5 +11,7 @@
     Successfully start game and layout levels (LEVEL GENERATION)  
 
 2020-11-27 / Danny Tran  
-    Write MovingObject.cs in Atom  
+    Write MovingObject.cs in Atom to inherit in Player and Enemy Objects  
     Debug MovingObject.cs in Atom using Unity Console  
+    Write Wall.cs in Atom for Destructible Walls  
+    
