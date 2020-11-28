@@ -14,4 +14,4 @@
     Write MovingObject.cs in Atom to inherit in Player and Enemy Objects  
     Debug MovingObject.cs in Atom using Unity Console  
     Write Wall.cs in Atom for Destructible Walls  
-    
+    Create conditional animation transition triggers for player in Unity
