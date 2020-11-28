@@ -7,5 +7,8 @@
 2020-11-26 / Danny Tran  
     Debug BoardManager.cs in Atom using Unity Console  
     Debug GameManager.cs in Atom using Unity Console  
-    Create Loader.cs in Atom  
+    Write Loader.cs in Atom  
     Successfully start game and layout levels (LEVEL GENERATION)  
+
+2020-11-27 / Danny Tran
+    Write MovingObject.cs in Atom
